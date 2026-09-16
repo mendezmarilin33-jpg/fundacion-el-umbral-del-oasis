@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Proyecto Tierra Fértil de Fundación El Umbral del Oasis: aprovechamiento de residuos vegetales mediante compostaje comunitario en Palo Negro, Santa Ana, El Salvador.">
+
+  <title>Tierra Fértil | Fundación El Umbral del Oasis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .tf-hero {
+      background: #123f35;
+      color: white;
+      padding: 110px 24px 100px;
+    }
+
+    .tf-container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .tf-label {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b8d7c7;
+      margin-bottom: 24px;
+    }
+
+    .tf-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: 0.98;
+      max-width: 900px;
+      margin: 0 0 32px;
+    }
+
+    .tf-hero p {
+      max-width: 760px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #e4eee9;
+    }
+
+    .tf-section {
+      padding: 100px 24px;
+    }
+
+    .tf-section-light {
+      background: #faf8f3;
+    }
+
+    .tf-section-soft {
+      background: #eaf3ef;
+    }
+
+    .tf-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .tf-kicker {
+      color: #176b58;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .tf-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      color: #172b25;
+      margin: 0 0 28px;
+    }
+
+    .tf-text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #384a44;
+    }
+
+    .tf-photo {
+      width: 100%;
+      border-radius: 26px;
+      display: block;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .tf-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 50px;
+    }
+
+    .tf-step {
+      background: white;
+      border: 1px solid #d7e3dd;
+      border-radius: 20px;
+      padding: 28px 22px;
+    }
+
+    .tf-step span {
+      display: block;
+      color: #176b58;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .tf-step h3 {
+      margin: 0 0 12px;
+      color: #172b25;
+    }
+
+    .tf-step p {
+      margin: 0;
+      line-height: 1.6;
+      color: #5c6b66;
+    }
+
+    .tf-highlight {
+      background: #123f35;
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .tf-highlight h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      margin: 0 0 24px;
+    }
+
+    .tf-highlight p {
+      font-size: 19px;
+      line-height: 1.75;
+      max-width: 850px;
+      color: #dceae4;
+    }
+
+    .tf-back {
+      display: inline-block;
+      margin-top: 35px;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #9dbbb0;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .tf-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tf-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tf-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .tf-container {
+        width: min(100% - 30px, 1180px);
+      }
+
+      .tf-hero {
+        padding-top: 75px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">UO</span>
+
+        <span class="brand-text">
+          <strong>El Umbral del Oasis</strong>
+          <small>Fundación</small>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#trabajo">Nuestro trabajo</a>
+        <a href="tierra-fertil.html">Tierra Fértil</a>
+        <a href="index.html#agua">Agua y Piscicultura</a>
+        <a href="index.html#transparencia">Transparencia</a>
+        <a href="index.html#contacto" class="btn btn-dark">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="tf-hero">
+      <div class="tf-container">
+
+        <div class="tf-label">
+          Proyecto comunitario · Tierra Fértil
+        </div>
+
+        <h1>
+          De residuos vegetales a un recurso para la comunidad.
+        </h1>
+
+        <p>
+          Tierra Fértil transforma hojas secas y otros residuos vegetales
+          mediante compostaje comunitario para recuperar materia orgánica,
+          mejorar el suelo y demostrar que un recurso desaprovechado puede
+          convertirse en una oportunidad ambiental y productiva.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- PROBLEMA -->
+    <section class="tf-section tf-section-light">
+
+      <div class="tf-container tf-grid">
+
+        <div>
+          <div class="tf-kicker">El punto de partida</div>
+
+          <h2 class="tf-title">
+            Un problema cotidiano con una solución local.
+          </h2>
+
+          <p class="tf-text">
+            En la comunidad Palo Negro, distrito de Coatepeque, Santa Ana Este,
+            la acumulación de hojas y residuos vegetales representa un problema
+            para las familias, especialmente en sectores donde la disposición
+            de estos materiales es limitada.
+          </p>
+
+          <p class="tf-text">
+            Tierra Fértil propone aprovechar este material mediante compostaje,
+            reduciendo su desperdicio y transformándolo progresivamente en
+            materia orgánica útil para el suelo.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="assets/tierra-fertil-recoleccion.jpeg"
+            alt="Recolección de hojas y residuos vegetales para el proyecto Tierra Fértil"
+            class="tf-photo">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROCESO -->
+    <section class="tf-section tf-section-soft">
+
+      <div class="tf-container">
+
+        <div class="tf-kicker">Nuestro proceso</div>
+
+        <h2 class="tf-title">
+          Del residuo a la tierra fértil.
+        </h2>
+
+        <p class="tf-text" style="max-width:780px;">
+          El proyecto documenta cada etapa para evaluar el proceso,
+          aprender de la experiencia y generar una metodología que pueda
+          mejorarse y replicarse en otras comunidades.
+        </p>
+
+        <div class="tf-steps">
+
+          <article class="tf-step">
+            <span>01</span>
+            <h3>Recolección</h3>
+            <p>
+              Acopio de hojas secas y otros materiales vegetales disponibles
+              en la comunidad.
+            </p>
+          </article>
+
+          <article class="tf-step">
+            <span>02</span>
+            <h3>Preparación</h3>
+            <p>
+              Organización del área y preparación de los materiales antes
+              de iniciar el compostaje.
+            </p>
+          </article>
+
+          <article class="tf-step">
+            <span>03</span>
+            <h3>Compostaje</h3>
+            <p>
+              Manejo del material mediante humedad, aireación, volteo y
+              seguimiento de su transformación.
+            </p>
+          </article>
+
+          <article class="tf-step">
+            <span>04</span>
+            <h3>Transformación</h3>
+            <p>
+              Maduración, trituración y tamizado para obtener un material
+              más uniforme y aprovechable.
+            </p>
+          </article>
+
+          <article class="tf-step">
+            <span>05</span>
+            <h3>Aprovechamiento</h3>
+            <p>
+              Uso del material obtenido para evaluar su aplicación en suelo
+              y pequeñas experiencias de cultivo.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- COMUNIDAD -->
+    <section class="tf-section tf-section-light">
+
+      <div class="tf-container">
+
+        <div class="tf-kicker">Participación comunitaria</div>
+
+        <h2 class="tf-title">
+          Aprender haciendo.
+        </h2>
+
+        <p class="tf-text" style="max-width:850px;">
+          El proyecto busca que la comunidad participe en la recolección,
+          manejo y aprovechamiento de los residuos vegetales. Más que producir
+          compost, Tierra Fértil pretende fortalecer conocimientos prácticos
+          sobre suelo, materia orgánica, manejo responsable de residuos y
+          producción sostenible.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- TRANSPARENCIA -->
+    <section class="tf-highlight">
+
+      <div class="tf-container">
+
+        <div class="tf-label">Evidencia y transparencia</div>
+
+        <h2>
+          Cada etapa debe poder comprobarse.
+        </h2>
+
+        <p>
+          Fundación El Umbral del Oasis documenta el desarrollo de Tierra
+          Fértil mediante fotografías, registros de campo, seguimiento del
+          proceso y resultados obtenidos. Esta información permitirá evaluar
+          lo que funcionó, identificar mejoras y estudiar la posibilidad de
+          replicar la experiencia en otras comunidades.
+        </p>
+
+        <a href="index.html" class="tf-back">
+          ← Volver al sitio principal
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
