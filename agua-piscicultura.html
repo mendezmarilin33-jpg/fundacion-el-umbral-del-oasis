@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Proyecto de Agua y Piscicultura de Fundación El Umbral del Oasis. Soluciones comunitarias para el aprovechamiento responsable del agua y la producción sostenible."
+  >
+
+  <title>Agua y Piscicultura | Fundación El Umbral del Oasis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .agua-hero {
+      background:
+        linear-gradient(rgba(8, 62, 57, 0.90), rgba(8, 62, 57, 0.90)),
+        linear-gradient(135deg, #0d615a, #123f3a);
+      color: white;
+      padding: 105px 20px 95px;
+    }
+
+    .agua-container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .agua-kicker {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 25px;
+      color: #bce4d9;
+    }
+
+    .agua-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 0.98;
+      max-width: 900px;
+      margin: 0 0 30px;
+    }
+
+    .agua-hero p {
+      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.75;
+      margin: 0;
+      color: #eef8f5;
+    }
+
+    .agua-section {
+      padding: 85px 20px;
+    }
+
+    .agua-section.light {
+      background: #f7f7f2;
+    }
+
+    .agua-section.soft {
+      background: #eaf3ef;
+    }
+
+    .agua-label {
+      color: #176b5c;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+    }
+
+    .agua-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.08;
+      color: #182b27;
+      max-width: 850px;
+      margin: 15px 0 25px;
+    }
+
+    .agua-lead {
+      max-width: 850px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #52635e;
+    }
+
+    .agua-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .agua-card {
+      background: white;
+      border: 1px solid #dce5e1;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(20, 60, 50, 0.06);
+    }
+
+    .agua-card .icono {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .agua-card h3 {
+      color: #172b27;
+      margin: 0 0 14px;
+      font-size: 21px;
+    }
+
+    .agua-card p {
+      color: #5c6b67;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .piscicultura-box {
+      background: #114f46;
+      color: white;
+      border-radius: 28px;
+      padding: 45px;
+      margin-top: 40px;
+    }
+
+    .piscicultura-box h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .piscicultura-box p {
+      color: #e5f2ee;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 850px;
+    }
+
+    .principios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .principio {
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      border: 1px solid #dce5e1;
+    }
+
+    .principio strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #154f45;
+      font-size: 18px;
+    }
+
+    .principio p {
+      margin: 0;
+      color: #5d6b67;
+      line-height: 1.65;
+    }
+
+    .agua-cta {
+      text-align: center;
+      background: #163f38;
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .agua-cta h2 {
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .agua-cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #e1efeb;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .agua-button {
+      display: inline-block;
+      background: white;
+      color: #164d43;
+      padding: 15px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 850px) {
+      .agua-grid,
+      .principios {
+        grid-template-columns: 1fr;
+      }
+
+      .agua-hero {
+        padding-top: 75px;
+      }
+
+      .piscicultura-box {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a href="index.html#inicio" class="brand">
+        <span class="brand-mark">UO</span>
+
+        <span class="brand-text">
+          <strong>El Umbral del Oasis</strong>
+          <small>Fundación</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#trabajo">Nuestro trabajo</a>
+        <a href="tierra-fertil.html">Tierra Fértil</a>
+        <a href="agua-piscicultura.html">Agua y Piscicultura</a>
+        <a href="index.html#transparencia">Transparencia</a>
+        <a href="index.html#contacto" class="btn btn-small">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="agua-hero">
+      <div class="agua-container">
+
+        <span class="agua-kicker">
+          Agua · Producción sostenible · Comunidad
+        </span>
+
+        <h1>
+          El agua como recurso para fortalecer comunidades.
+        </h1>
+
+        <p>
+          Desde Fundación El Umbral del Oasis promovemos iniciativas
+          comunitarias orientadas al uso responsable del agua, su
+          aprovechamiento productivo y la búsqueda de alternativas
+          sostenibles que respondan a las condiciones de cada territorio.
+        </p>
+
+      </div>
+    </section>
+
+
+    <section class="agua-section light">
+      <div class="agua-container">
+
+        <span class="agua-label">Nuestro enfoque</span>
+
+        <h2>
+          Agua, territorio y producción deben planificarse juntos.
+        </h2>
+
+        <p class="agua-lead">
+          La disponibilidad de agua condiciona la vida de las comunidades,
+          la producción agrícola, la recuperación del suelo y las
+          posibilidades de desarrollar sistemas productivos. Por ello,
+          nuestro enfoque parte de observar las condiciones locales,
+          identificar necesidades y evaluar soluciones técnicamente
+          apropiadas antes de implementar cada iniciativa.
+        </p>
+
+        <div class="agua-grid">
+
+          <article class="agua-card">
+            <div class="icono">💧</div>
+
+            <h3>Disponibilidad de agua</h3>
+
+            <p>
+              Evaluamos las condiciones locales y las posibilidades de
+              captación, almacenamiento y aprovechamiento responsable
+              del recurso hídrico.
+            </p>
+          </article>
+
+
+          <article class="agua-card">
+            <div class="icono">🌱</div>
+
+            <h3>Uso productivo</h3>
+
+            <p>
+              Buscamos que el agua disponible pueda apoyar sistemas
+              productivos sostenibles sin comprometer las necesidades
+              esenciales de las comunidades.
+            </p>
+          </article>
+
+
+          <article class="agua-card">
+            <div class="icono">👥</div>
+
+            <h3>Gestión comunitaria</h3>
+
+            <p>
+              Promovemos participación, organización y aprendizaje para
+              que las soluciones puedan mantenerse y adaptarse a las
+              condiciones del territorio.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="agua-section soft">
+      <div class="agua-container">
+
+        <span class="agua-label">Piscicultura</span>
+
+        <h2>
+          Exploramos alternativas productivas adaptadas a la realidad local.
+        </h2>
+
+        <p class="agua-lead">
+          La piscicultura puede representar una alternativa para fortalecer
+          la producción de alimentos y diversificar las oportunidades
+          económicas de una comunidad. Sin embargo, su implementación
+          requiere estudiar previamente la disponibilidad y calidad del
+          agua, las condiciones ambientales, la infraestructura necesaria
+          y la capacidad de manejo del sistema.
+        </p>
+
+        <div class="piscicultura-box">
+
+          <h3>
+            Primero evaluamos. Después implementamos.
+          </h3>
+
+          <p>
+            No planteamos la piscicultura como una solución aislada.
+            Cada iniciativa debe analizarse de acuerdo con las condiciones
+            reales del territorio, especialmente la disponibilidad de agua,
+            la sostenibilidad del sistema y la participación de la comunidad.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="agua-section light">
+      <div class="agua-container">
+
+        <span class="agua-label">Principios de trabajo</span>
+
+        <h2>
+          Proyectos construidos para permanecer en el tiempo.
+        </h2>
+
+        <div class="principios">
+
+          <div class="principio">
+            <strong>💧 Uso responsable</strong>
+            <p>
+              El aprovechamiento productivo debe considerar primero la
+              disponibilidad real del recurso y evitar usos que puedan
+              generar presión innecesaria sobre las fuentes de agua.
+            </p>
+          </div>
+
+
+          <div class="principio">
+            <strong>📊 Decisiones basadas en evidencia</strong>
+            <p>
+              Las propuestas se desarrollan a partir de observaciones,
+              información técnica y condiciones verificables del territorio.
+            </p>
+          </div>
+
+
+          <div class="principio">
+            <strong>🌿 Sostenibilidad ambiental</strong>
+            <p>
+              Buscamos soluciones compatibles con el suelo, el agua,
+              los ecosistemas y la capacidad productiva de cada comunidad.
+            </p>
+          </div>
+
+
+          <div class="principio">
+            <strong>🤝 Participación comunitaria</strong>
+            <p>
+              Las personas forman parte de la planificación, aprendizaje,
+              implementación y mantenimiento de las iniciativas.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="agua-section soft">
+      <div class="agua-container">
+
+        <span class="agua-label">Adaptación y resiliencia</span>
+
+        <h2>
+          Prepararnos también significa adaptarnos a los cambios en el agua.
+        </h2>
+
+        <p class="agua-lead">
+          Los periodos secos, las variaciones en las lluvias y los cambios
+          en la disponibilidad hídrica pueden afectar directamente los
+          proyectos agrícolas y productivos. Por ello, la Fundación
+          considera estas condiciones dentro de la planificación y procura
+          que las iniciativas puedan ajustarse cuando las circunstancias
+          ambientales lo requieran.
+        </p>
+
+      </div>
+    </section>
+
+
+    <section class="agua-cta">
+      <div class="agua-container">
+
+        <h2>
+          Agua, suelo y comunidad forman parte del mismo territorio.
+        </h2>
+
+        <p>
+          Nuestro objetivo es desarrollar soluciones realistas,
+          responsables y sostenibles que puedan convertirse en
+          oportunidades para las comunidades.
+        </p>
+
+        <a href="index.html#contacto" class="agua-button">
+          Conoce nuestro trabajo
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
