@@ -75,7 +75,7 @@
     }
 
     .tf-white {
-      background: #fff;
+      background: #ffffff;
     }
 
     .tf-grid {
@@ -218,6 +218,7 @@
       overflow: hidden;
       border-radius: 20px;
       background: #e7ece9;
+      box-shadow: 0 12px 30px rgba(17, 48, 40, .06);
     }
 
     .tf-gallery img {
@@ -253,6 +254,7 @@
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid #d7e3dd;
+      box-shadow: 0 12px 30px rgba(17, 48, 40, .06);
     }
 
     .tf-video-card video {
@@ -309,6 +311,11 @@
       font-weight: 700;
     }
 
+    .tf-back:hover {
+      background: white;
+      color: #123f35;
+    }
+
     @media (max-width: 950px) {
       .tf-grid,
       .tf-story {
@@ -352,6 +359,10 @@
       .tf-gallery img {
         height: 360px;
       }
+
+      .tf-video-card video {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -392,9 +403,7 @@
           Proyecto comunitario · Palo Negro · Santa Ana
         </div>
 
-        <h1>
-          Tierra Fértil
-        </h1>
+        <h1>Tierra Fértil</h1>
 
         <p>
           Una iniciativa de Fundación El Umbral del Oasis que busca aprovechar
@@ -406,7 +415,7 @@
       </div>
     </section>
 
-    <!-- PROBLEMA -->
+    <!-- PUNTO DE PARTIDA -->
     <section class="tf-section tf-light">
 
       <div class="tf-container tf-grid">
@@ -511,29 +520,30 @@
       </div>
     </section>
 
-    <!-- HISTORIA VISUAL -->
+    <!-- PROYECTO EN CAMPO -->
     <section class="tf-section tf-white">
 
       <div class="tf-container">
 
-        <div class="tf-kicker">Trabajo en campo</div>
+        <div class="tf-kicker">Proyecto piloto en Palo Negro</div>
 
         <h2 class="tf-title">
           El proceso documentado paso a paso.
         </h2>
 
         <p class="tf-text" style="max-width:850px;">
-          Estas imágenes forman parte del registro realizado durante las
-          actividades del proyecto. La documentación permite conservar
-          evidencia de las condiciones iniciales, el trabajo realizado y
-          los cambios observados durante el proceso.
+          Las imágenes forman parte del registro real del proyecto piloto.
+          Documentar las actividades permite conservar evidencia de las
+          condiciones iniciales, del trabajo realizado y de la evolución
+          del material durante el proceso de compostaje.
         </p>
 
         <div class="tf-story">
 
           <div class="tf-story-card">
-            <img src="assets/fotos/03_preparacion_fosa.jpeg"
-                 alt="Preparación de la fosa para el proyecto Tierra Fértil">
+            <img
+              src="assets/fotos/03_preparacion_fosa.jpeg"
+              alt="Preparación del área para el proyecto Tierra Fértil">
             <div class="tf-story-info">
               <span>Preparación</span>
               <h3>Acondicionamiento del área de trabajo</h3>
@@ -541,17 +551,19 @@
           </div>
 
           <div class="tf-story-card">
-            <img src="assets/fotos/04_manejo_compostaje.jpeg"
-                 alt="Manejo del material orgánico durante el compostaje">
+            <img
+              src="assets/fotos/04_manejo_compostaje.jpeg"
+              alt="Manejo del material orgánico durante el compostaje">
             <div class="tf-story-info">
-              <span>Manejo</span>
+              <span>Compostaje</span>
               <h3>Trabajo directo con el material orgánico</h3>
             </div>
           </div>
 
           <div class="tf-story-card">
-            <img src="assets/fotos/05_material_en_transformacion.jpeg"
-                 alt="Material orgánico durante su transformación">
+            <img
+              src="assets/fotos/05_material_en_transformacion.jpeg"
+              alt="Material orgánico durante su transformación">
             <div class="tf-story-info">
               <span>Transformación</span>
               <h3>Seguimiento de los cambios del material</h3>
@@ -559,10 +571,11 @@
           </div>
 
           <div class="tf-story-card">
-            <img src="assets/fotos/06_composta_obtenida.jpeg"
-                 alt="Composta obtenida durante el proyecto">
+            <img
+              src="assets/fotos/06_composta_obtenida.jpeg"
+              alt="Materia orgánica obtenida durante el proyecto">
             <div class="tf-story-info">
-              <span>Resultado</span>
+              <span>Resultado del proceso</span>
               <h3>Recuperación de materia orgánica</h3>
             </div>
           </div>
@@ -580,7 +593,7 @@
         <div>
           <img
             src="assets/fotos/07_trabajo_campo.jpeg"
-            alt="Participación y trabajo de campo en Tierra Fértil"
+            alt="Trabajo de campo en el proyecto Tierra Fértil"
             class="tf-photo">
         </div>
 
@@ -621,52 +634,73 @@
 
         <p class="tf-text" style="max-width:820px;">
           Una parte fundamental del proyecto es conservar evidencia del trabajo
-          realizado. Las fotografías permiten observar las diferentes etapas
-          y respaldar el seguimiento de las actividades desarrolladas.
+          realizado. Las fotografías permiten observar diferentes etapas y
+          respaldar el seguimiento de las actividades desarrolladas en campo.
         </p>
 
         <div class="tf-gallery">
 
           <figure>
-            <img src="assets/fotos/01_recoleccion_material_vegetal.jpeg"
-                 alt="Recolección de material vegetal">
-            <figcaption>Recolección de material vegetal.</figcaption>
+            <img
+              src="assets/fotos/01_recoleccion_material_vegetal.jpeg"
+              alt="Recolección de material vegetal">
+            <figcaption>
+              Recolección de material vegetal disponible en el entorno.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/02_acopio_hojas_sacos.jpeg"
-                 alt="Acopio de hojas">
-            <figcaption>Acopio y organización del material recolectado.</figcaption>
+            <img
+              src="assets/fotos/02_acopio_hojas_sacos.jpeg"
+              alt="Acopio de hojas y residuos vegetales">
+            <figcaption>
+              Acopio y organización del material recolectado.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/03_preparacion_fosa.jpeg"
-                 alt="Preparación del área">
-            <figcaption>Preparación del área destinada al proceso.</figcaption>
+            <img
+              src="assets/fotos/03_preparacion_fosa.jpeg"
+              alt="Preparación del área de compostaje">
+            <figcaption>
+              Preparación del área destinada al proceso.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/04_manejo_compostaje.jpeg"
-                 alt="Manejo del compostaje">
-            <figcaption>Manejo del material durante el proceso.</figcaption>
+            <img
+              src="assets/fotos/04_manejo_compostaje.jpeg"
+              alt="Manejo del material durante el compostaje">
+            <figcaption>
+              Manejo del material orgánico durante el proceso.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/05_material_en_transformacion.jpeg"
-                 alt="Material en transformación">
-            <figcaption>Material vegetal en proceso de transformación.</figcaption>
+            <img
+              src="assets/fotos/05_material_en_transformacion.jpeg"
+              alt="Material vegetal en transformación">
+            <figcaption>
+              Material vegetal en proceso de transformación.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/06_composta_obtenida.jpeg"
-                 alt="Materia orgánica obtenida">
-            <figcaption>Materia orgánica recuperada durante el proceso.</figcaption>
+            <img
+              src="assets/fotos/06_composta_obtenida.jpeg"
+              alt="Materia orgánica recuperada">
+            <figcaption>
+              Materia orgánica recuperada durante el desarrollo del proyecto.
+            </figcaption>
           </figure>
 
           <figure>
-            <img src="assets/fotos/07_trabajo_campo.jpeg"
-                 alt="Trabajo de campo">
-            <figcaption>Actividades y seguimiento en campo.</figcaption>
+            <img
+              src="assets/fotos/07_trabajo_campo.jpeg"
+              alt="Trabajo y seguimiento en campo">
+            <figcaption>
+              Actividades de trabajo y seguimiento en campo.
+            </figcaption>
           </figure>
 
         </div>
@@ -687,42 +721,60 @@
 
         <p class="tf-text" style="max-width:820px;">
           Los registros audiovisuales complementan la evidencia fotográfica y
-          permiten mostrar de una manera más directa las actividades realizadas
-          durante el desarrollo de Tierra Fértil.
+          permiten mostrar de manera más directa las actividades realizadas
+          durante el desarrollo del proyecto Tierra Fértil.
         </p>
 
         <div class="tf-video-grid">
 
           <article class="tf-video-card">
-            <video controls preload="metadata">
-              <source src="assets/videos/01_recoleccion_y_acopio.mp4" type="video/mp4">
+            <video controls preload="metadata" playsinline>
+              <source
+                src="assets/videos/01_recoleccion_y_trabajo_comunitario.mp4"
+                type="video/mp4">
               Tu navegador no puede reproducir este video.
             </video>
+
             <div class="tf-video-info">
-              <h3>Recolección y acopio</h3>
-              <p>Registro de las actividades iniciales del proyecto.</p>
+              <h3>Recolección y trabajo comunitario</h3>
+              <p>
+                Registro audiovisual de las actividades iniciales y del
+                manejo del material vegetal.
+              </p>
             </div>
           </article>
 
           <article class="tf-video-card">
-            <video controls preload="metadata">
-              <source src="assets/videos/02_proceso_compostaje.mp4" type="video/mp4">
+            <video controls preload="metadata" playsinline>
+              <source
+                src="assets/videos/02_manejo_del_compostaje.mp4"
+                type="video/mp4">
               Tu navegador no puede reproducir este video.
             </video>
+
             <div class="tf-video-info">
-              <h3>Proceso de compostaje</h3>
-              <p>Trabajo realizado con el material orgánico.</p>
+              <h3>Manejo del compostaje</h3>
+              <p>
+                Evidencia del trabajo realizado con el material orgánico
+                durante el proceso.
+              </p>
             </div>
           </article>
 
           <article class="tf-video-card">
-            <video controls preload="metadata">
-              <source src="assets/videos/03_seguimiento_en_campo.mp4" type="video/mp4">
+            <video controls preload="metadata" playsinline>
+              <source
+                src="assets/videos/03_seguimiento_en_campo.mp4"
+                type="video/mp4">
               Tu navegador no puede reproducir este video.
             </video>
+
             <div class="tf-video-info">
               <h3>Seguimiento en campo</h3>
-              <p>Evidencia audiovisual del desarrollo de las actividades.</p>
+              <p>
+                Registro del desarrollo y seguimiento de las actividades
+                realizadas en el proyecto.
+              </p>
             </div>
           </article>
 
@@ -736,7 +788,9 @@
 
       <div class="tf-container">
 
-        <div class="tf-label">Evidencia y transparencia</div>
+        <div class="tf-label">
+          Evidencia y transparencia
+        </div>
 
         <h2>
           Documentar también forma parte del proyecto.
