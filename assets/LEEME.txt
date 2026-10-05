@@ -1,0 +1,18 @@
+TIERRA FÉRTIL — PROYECTO PILOTO DE COMPOSTAJE
+Selección preparada para la página web de Fundación El Umbral del Oasis.
+
+FOTOS
+01_recoleccion_material_vegetal.jpeg — vista amplia de recolección y trabajo con hojas.
+02_acopio_hojas_sacos.jpeg — hojas secas reunidas en sacos.
+03_preparacion_fosa.jpeg — preparación de la fosa/área de compostaje.
+04_manejo_compostaje.jpeg — trabajo manual durante el proceso.
+05_material_en_transformacion.jpeg — material orgánico en proceso de transformación.
+06_composta_obtenida.jpeg — material oscuro recogido en saco.
+07_trabajo_campo.jpeg — seguimiento/trabajo en el área del proyecto.
+
+VIDEOS
+01_recoleccion_y_trabajo_comunitario.mp4 — recolección y participación en campo.
+02_manejo_del_compostaje.mp4 — manejo práctico del material.
+03_seguimiento_en_campo.mp4 — seguimiento del proyecto piloto en el área.
+
+Los nombres están preparados para poder subir los archivos directamente a la carpeta assets del repositorio y luego referenciarlos desde tierra-fertil.html.
