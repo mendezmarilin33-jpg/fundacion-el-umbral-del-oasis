@@ -16,10 +16,20 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     .tf-hero {
-      background: #123f35;
+      position: relative;
+      min-height: 670px;
+      display: flex;
+      align-items: flex-end;
       color: white;
-      padding: 110px 24px 100px;
+      padding: 110px 24px 90px;
+      background:
+        linear-gradient(90deg, rgba(12, 47, 39, .94) 0%, rgba(12, 47, 39, .82) 45%, rgba(12, 47, 39, .35) 100%),
+        url("assets/fotos/01_recoleccion_material_vegetal.jpeg") center/cover no-repeat;
     }
 
     .tf-container {
@@ -28,39 +38,44 @@
     }
 
     .tf-label {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
-      color: #b8d7c7;
-      margin-bottom: 24px;
+      color: #c4dfd2;
+      margin-bottom: 22px;
     }
 
     .tf-hero h1 {
       font-family: "Playfair Display", serif;
       font-size: clamp(52px, 7vw, 92px);
-      line-height: 0.98;
+      line-height: .98;
       max-width: 900px;
-      margin: 0 0 32px;
+      margin: 0 0 30px;
     }
 
     .tf-hero p {
-      max-width: 760px;
+      max-width: 750px;
       font-size: 20px;
       line-height: 1.7;
-      color: #e4eee9;
+      color: #edf5f1;
+      margin: 0;
     }
 
     .tf-section {
       padding: 100px 24px;
     }
 
-    .tf-section-light {
+    .tf-light {
       background: #faf8f3;
     }
 
-    .tf-section-soft {
+    .tf-soft {
       background: #eaf3ef;
+    }
+
+    .tf-white {
+      background: #fff;
     }
 
     .tf-grid {
@@ -95,12 +110,14 @@
 
     .tf-photo {
       width: 100%;
+      height: 500px;
       border-radius: 26px;
       display: block;
-      min-height: 430px;
       object-fit: cover;
+      box-shadow: 0 20px 50px rgba(17, 48, 40, .12);
     }
 
+    /* ETAPAS */
     .tf-steps {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -133,10 +150,139 @@
       color: #5c6b66;
     }
 
+    /* HISTORIA VISUAL */
+    .tf-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 50px;
+    }
+
+    .tf-story-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 430px;
+      background: #123f35;
+    }
+
+    .tf-story-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .tf-story-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .tf-story-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 70px 28px 28px;
+      color: white;
+      background: linear-gradient(transparent, rgba(5, 31, 25, .92));
+    }
+
+    .tf-story-info span {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #c6e0d4;
+      margin-bottom: 8px;
+    }
+
+    .tf-story-info h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* GALERÍA */
+    .tf-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .tf-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #e7ece9;
+    }
+
+    .tf-gallery img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+
+    .tf-gallery figure:hover img {
+      transform: scale(1.03);
+    }
+
+    .tf-gallery figcaption {
+      background: white;
+      padding: 18px 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #53645e;
+    }
+
+    /* VIDEOS */
+    .tf-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    .tf-video-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #d7e3dd;
+    }
+
+    .tf-video-card video {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+      background: #0d2e27;
+    }
+
+    .tf-video-info {
+      padding: 22px;
+    }
+
+    .tf-video-info h3 {
+      margin: 0 0 8px;
+      color: #172b25;
+    }
+
+    .tf-video-info p {
+      margin: 0;
+      line-height: 1.6;
+      color: #61716c;
+    }
+
+    /* CIERRE */
     .tf-highlight {
       background: #123f35;
       color: white;
-      padding: 80px 24px;
+      padding: 90px 24px;
     }
 
     .tf-highlight h2 {
@@ -163,27 +309,48 @@
       font-weight: 700;
     }
 
-    @media (max-width: 900px) {
-      .tf-grid {
+    @media (max-width: 950px) {
+      .tf-grid,
+      .tf-story {
         grid-template-columns: 1fr;
       }
 
       .tf-steps {
         grid-template-columns: 1fr 1fr;
       }
-    }
 
-    @media (max-width: 600px) {
-      .tf-steps {
-        grid-template-columns: 1fr;
+      .tf-gallery,
+      .tf-video-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
+      .tf-photo {
+        height: 430px;
+      }
+    }
+
+    @media (max-width: 650px) {
       .tf-container {
         width: min(100% - 30px, 1180px);
       }
 
       .tf-hero {
-        padding-top: 75px;
+        min-height: 600px;
+        padding: 90px 20px 65px;
+      }
+
+      .tf-section {
+        padding: 75px 20px;
+      }
+
+      .tf-steps,
+      .tf-gallery,
+      .tf-video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tf-gallery img {
+        height: 360px;
       }
     }
   </style>
@@ -215,7 +382,6 @@
     </div>
   </header>
 
-
   <main>
 
     <!-- PORTADA -->
@@ -223,26 +389,25 @@
       <div class="tf-container">
 
         <div class="tf-label">
-          Proyecto comunitario · Tierra Fértil
+          Proyecto comunitario · Palo Negro · Santa Ana
         </div>
 
         <h1>
-          De residuos vegetales a un recurso para la comunidad.
+          Tierra Fértil
         </h1>
 
         <p>
-          Tierra Fértil transforma hojas secas y otros residuos vegetales
-          mediante compostaje comunitario para recuperar materia orgánica,
-          mejorar el suelo y demostrar que un recurso desaprovechado puede
-          convertirse en una oportunidad ambiental y productiva.
+          Una iniciativa de Fundación El Umbral del Oasis que busca aprovechar
+          hojas y otros residuos vegetales de la comunidad mediante compostaje,
+          transformando materiales disponibles localmente en materia orgánica
+          aprovechable para el suelo.
         </p>
 
       </div>
     </section>
 
-
     <!-- PROBLEMA -->
-    <section class="tf-section tf-section-light">
+    <section class="tf-section tf-light">
 
       <div class="tf-container tf-grid">
 
@@ -250,49 +415,48 @@
           <div class="tf-kicker">El punto de partida</div>
 
           <h2 class="tf-title">
-            Un problema cotidiano con una solución local.
+            Un recurso que estaba siendo desaprovechado.
           </h2>
 
           <p class="tf-text">
             En la comunidad Palo Negro, distrito de Coatepeque, Santa Ana Este,
-            la acumulación de hojas y residuos vegetales representa un problema
-            para las familias, especialmente en sectores donde la disposición
-            de estos materiales es limitada.
+            existe disponibilidad de hojas secas y otros residuos vegetales que
+            pueden aprovecharse en lugar de desecharse.
           </p>
 
           <p class="tf-text">
-            Tierra Fértil propone aprovechar este material mediante compostaje,
-            reduciendo su desperdicio y transformándolo progresivamente en
-            materia orgánica útil para el suelo.
+            A partir de esta realidad surge Tierra Fértil, una propuesta para
+            recolectar estos materiales, manejarlos mediante compostaje y
+            observar su transformación hasta obtener materia orgánica útil
+            para el suelo.
           </p>
         </div>
 
         <div>
           <img
-            src="assets/tierra-fertil-recoleccion.jpeg"
-            alt="Recolección de hojas y residuos vegetales para el proyecto Tierra Fértil"
+            src="assets/fotos/02_acopio_hojas_sacos.jpeg"
+            alt="Acopio de hojas y material vegetal en la comunidad"
             class="tf-photo">
         </div>
 
       </div>
     </section>
 
-
     <!-- PROCESO -->
-    <section class="tf-section tf-section-soft">
+    <section class="tf-section tf-soft">
 
       <div class="tf-container">
 
         <div class="tf-kicker">Nuestro proceso</div>
 
         <h2 class="tf-title">
-          Del residuo a la tierra fértil.
+          Del material vegetal a la tierra fértil.
         </h2>
 
-        <p class="tf-text" style="max-width:780px;">
-          El proyecto documenta cada etapa para evaluar el proceso,
-          aprender de la experiencia y generar una metodología que pueda
-          mejorarse y replicarse en otras comunidades.
+        <p class="tf-text" style="max-width:820px;">
+          El trabajo se desarrolla por etapas. Cada una se registra para
+          documentar el avance, evaluar la experiencia y generar aprendizajes
+          que permitan mejorar el proceso.
         </p>
 
         <div class="tf-steps">
@@ -301,8 +465,8 @@
             <span>01</span>
             <h3>Recolección</h3>
             <p>
-              Acopio de hojas secas y otros materiales vegetales disponibles
-              en la comunidad.
+              Recolección y acopio de hojas secas y otros materiales vegetales
+              disponibles en el entorno.
             </p>
           </article>
 
@@ -310,8 +474,8 @@
             <span>02</span>
             <h3>Preparación</h3>
             <p>
-              Organización del área y preparación de los materiales antes
-              de iniciar el compostaje.
+              Preparación del espacio y organización del material antes de
+              iniciar el proceso.
             </p>
           </article>
 
@@ -319,8 +483,8 @@
             <span>03</span>
             <h3>Compostaje</h3>
             <p>
-              Manejo del material mediante humedad, aireación, volteo y
-              seguimiento de su transformación.
+              Manejo de los residuos vegetales para favorecer su
+              descomposición progresiva.
             </p>
           </article>
 
@@ -328,8 +492,8 @@
             <span>04</span>
             <h3>Transformación</h3>
             <p>
-              Maduración, trituración y tamizado para obtener un material
-              más uniforme y aprovechable.
+              Seguimiento del cambio del material hasta obtener una materia
+              orgánica más estable.
             </p>
           </article>
 
@@ -337,8 +501,8 @@
             <span>05</span>
             <h3>Aprovechamiento</h3>
             <p>
-              Uso del material obtenido para evaluar su aplicación en suelo
-              y pequeñas experiencias de cultivo.
+              Recuperación del material obtenido para valorar su utilización
+              en suelo y experiencias productivas.
             </p>
           </article>
 
@@ -347,29 +511,225 @@
       </div>
     </section>
 
-
-    <!-- COMUNIDAD -->
-    <section class="tf-section tf-section-light">
+    <!-- HISTORIA VISUAL -->
+    <section class="tf-section tf-white">
 
       <div class="tf-container">
 
-        <div class="tf-kicker">Participación comunitaria</div>
+        <div class="tf-kicker">Trabajo en campo</div>
 
         <h2 class="tf-title">
-          Aprender haciendo.
+          El proceso documentado paso a paso.
         </h2>
 
         <p class="tf-text" style="max-width:850px;">
-          El proyecto busca que la comunidad participe en la recolección,
-          manejo y aprovechamiento de los residuos vegetales. Más que producir
-          compost, Tierra Fértil pretende fortalecer conocimientos prácticos
-          sobre suelo, materia orgánica, manejo responsable de residuos y
-          producción sostenible.
+          Estas imágenes forman parte del registro realizado durante las
+          actividades del proyecto. La documentación permite conservar
+          evidencia de las condiciones iniciales, el trabajo realizado y
+          los cambios observados durante el proceso.
         </p>
+
+        <div class="tf-story">
+
+          <div class="tf-story-card">
+            <img src="assets/fotos/03_preparacion_fosa.jpeg"
+                 alt="Preparación de la fosa para el proyecto Tierra Fértil">
+            <div class="tf-story-info">
+              <span>Preparación</span>
+              <h3>Acondicionamiento del área de trabajo</h3>
+            </div>
+          </div>
+
+          <div class="tf-story-card">
+            <img src="assets/fotos/04_manejo_compostaje.jpeg"
+                 alt="Manejo del material orgánico durante el compostaje">
+            <div class="tf-story-info">
+              <span>Manejo</span>
+              <h3>Trabajo directo con el material orgánico</h3>
+            </div>
+          </div>
+
+          <div class="tf-story-card">
+            <img src="assets/fotos/05_material_en_transformacion.jpeg"
+                 alt="Material orgánico durante su transformación">
+            <div class="tf-story-info">
+              <span>Transformación</span>
+              <h3>Seguimiento de los cambios del material</h3>
+            </div>
+          </div>
+
+          <div class="tf-story-card">
+            <img src="assets/fotos/06_composta_obtenida.jpeg"
+                 alt="Composta obtenida durante el proyecto">
+            <div class="tf-story-info">
+              <span>Resultado</span>
+              <h3>Recuperación de materia orgánica</h3>
+            </div>
+          </div>
+
+        </div>
 
       </div>
     </section>
 
+    <!-- PARTICIPACIÓN -->
+    <section class="tf-section tf-soft">
+
+      <div class="tf-container tf-grid">
+
+        <div>
+          <img
+            src="assets/fotos/07_trabajo_campo.jpeg"
+            alt="Participación y trabajo de campo en Tierra Fértil"
+            class="tf-photo">
+        </div>
+
+        <div>
+          <div class="tf-kicker">Participación comunitaria</div>
+
+          <h2 class="tf-title">
+            Aprender haciendo.
+          </h2>
+
+          <p class="tf-text">
+            Tierra Fértil también representa una oportunidad para compartir
+            conocimientos sobre el manejo de residuos orgánicos, el cuidado
+            del suelo y el aprovechamiento de los recursos disponibles en
+            la comunidad.
+          </p>
+
+          <p class="tf-text">
+            El trabajo práctico permite observar directamente cada etapa,
+            identificar dificultades y adaptar el proceso a las condiciones
+            reales del lugar.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="tf-section tf-light">
+
+      <div class="tf-container">
+
+        <div class="tf-kicker">Evidencia fotográfica</div>
+
+        <h2 class="tf-title">
+          Tierra Fértil en imágenes.
+        </h2>
+
+        <p class="tf-text" style="max-width:820px;">
+          Una parte fundamental del proyecto es conservar evidencia del trabajo
+          realizado. Las fotografías permiten observar las diferentes etapas
+          y respaldar el seguimiento de las actividades desarrolladas.
+        </p>
+
+        <div class="tf-gallery">
+
+          <figure>
+            <img src="assets/fotos/01_recoleccion_material_vegetal.jpeg"
+                 alt="Recolección de material vegetal">
+            <figcaption>Recolección de material vegetal.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/02_acopio_hojas_sacos.jpeg"
+                 alt="Acopio de hojas">
+            <figcaption>Acopio y organización del material recolectado.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/03_preparacion_fosa.jpeg"
+                 alt="Preparación del área">
+            <figcaption>Preparación del área destinada al proceso.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/04_manejo_compostaje.jpeg"
+                 alt="Manejo del compostaje">
+            <figcaption>Manejo del material durante el proceso.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/05_material_en_transformacion.jpeg"
+                 alt="Material en transformación">
+            <figcaption>Material vegetal en proceso de transformación.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/06_composta_obtenida.jpeg"
+                 alt="Materia orgánica obtenida">
+            <figcaption>Materia orgánica recuperada durante el proceso.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/fotos/07_trabajo_campo.jpeg"
+                 alt="Trabajo de campo">
+            <figcaption>Actividades y seguimiento en campo.</figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="tf-section tf-soft">
+
+      <div class="tf-container">
+
+        <div class="tf-kicker">Registro audiovisual</div>
+
+        <h2 class="tf-title">
+          El trabajo también queda registrado en video.
+        </h2>
+
+        <p class="tf-text" style="max-width:820px;">
+          Los registros audiovisuales complementan la evidencia fotográfica y
+          permiten mostrar de una manera más directa las actividades realizadas
+          durante el desarrollo de Tierra Fértil.
+        </p>
+
+        <div class="tf-video-grid">
+
+          <article class="tf-video-card">
+            <video controls preload="metadata">
+              <source src="assets/videos/01_recoleccion_y_acopio.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <div class="tf-video-info">
+              <h3>Recolección y acopio</h3>
+              <p>Registro de las actividades iniciales del proyecto.</p>
+            </div>
+          </article>
+
+          <article class="tf-video-card">
+            <video controls preload="metadata">
+              <source src="assets/videos/02_proceso_compostaje.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <div class="tf-video-info">
+              <h3>Proceso de compostaje</h3>
+              <p>Trabajo realizado con el material orgánico.</p>
+            </div>
+          </article>
+
+          <article class="tf-video-card">
+            <video controls preload="metadata">
+              <source src="assets/videos/03_seguimiento_en_campo.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <div class="tf-video-info">
+              <h3>Seguimiento en campo</h3>
+              <p>Evidencia audiovisual del desarrollo de las actividades.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
 
     <!-- TRANSPARENCIA -->
     <section class="tf-highlight">
@@ -379,15 +739,15 @@
         <div class="tf-label">Evidencia y transparencia</div>
 
         <h2>
-          Cada etapa debe poder comprobarse.
+          Documentar también forma parte del proyecto.
         </h2>
 
         <p>
-          Fundación El Umbral del Oasis documenta el desarrollo de Tierra
-          Fértil mediante fotografías, registros de campo, seguimiento del
-          proceso y resultados obtenidos. Esta información permitirá evaluar
-          lo que funcionó, identificar mejoras y estudiar la posibilidad de
-          replicar la experiencia en otras comunidades.
+          Fundación El Umbral del Oasis registra el desarrollo de Tierra Fértil
+          mediante fotografías, videos y observaciones de campo. Esta evidencia
+          permite dar seguimiento al trabajo realizado, identificar oportunidades
+          de mejora y conservar un registro de la experiencia desarrollada en
+          la comunidad.
         </p>
 
         <a href="index.html" class="tf-back">
@@ -398,7 +758,6 @@
     </section>
 
   </main>
-
 
   <script src="script.js"></script>
 
