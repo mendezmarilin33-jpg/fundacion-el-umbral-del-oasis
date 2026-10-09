@@ -3,17 +3,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Campaña Banco Comunitario de Tierra Fértil de Fundación El Umbral del Oasis en Palo Negro, El Salvador.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apoya el Banco Comunitario de Tierra Fértil de Fundación El Umbral del Oasis en Palo Negro, El Salvador.">
   <title>Campaña Tierra Fértil | Fundación El Umbral del Oasis</title>
+
   <style>
     :root {
-      --verde: #184d32;
-      --verde2: #2f7a4b;
-      --claro: #f4f7f2;
-      --texto: #17211b;
-      --gris: #66726b;
-      --dorado: #e6a635;
+      --verde: #164b32;
+      --verde2: #2e8051;
+      --verdeoscuro: #0c2e20;
+      --dorado: #e8ad48;
+      --fondo: #f5f8f4;
+      --texto: #18271f;
+      --gris: #63746a;
+      --borde: #dce8df;
+      --sombra: 0 14px 40px rgba(16,55,31,.10);
     }
 
     * { box-sizing: border-box; }
@@ -22,95 +26,114 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background: white;
       color: var(--texto);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a { text-decoration: none; }
 
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--dorado);
+      outline-offset: 4px;
+    }
+
     .contenedor {
-      width: min(1150px, 92%);
+      width: min(1160px, 92%);
       margin: auto;
     }
 
-    .barra {
-      background: #103b26;
+    .navegacion {
+      background: var(--verdeoscuro);
       padding: 16px 0;
     }
 
-    .barra .contenedor {
+    .navegacion .contenedor {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 16px;
     }
 
     .marca {
       color: white;
       font-size: 17px;
-      font-weight: bold;
+      font-weight: 800;
     }
 
-    .regresar {
-      color: #fff;
-      border: 1px solid #ffffff70;
-      padding: 9px 16px;
+    .volver {
+      color: white;
+      padding: 9px 17px;
+      border: 1px solid #ffffff65;
       border-radius: 10px;
     }
 
+    .volver:hover { background: #ffffff18; }
+
     .hero {
-      background: linear-gradient(125deg, #103b26, #2f7a4b);
+      position: relative;
+      background:
+        radial-gradient(circle at 85% 10%, #468b5944, transparent 38%),
+        linear-gradient(125deg, #0c2e20, #246d43);
       color: white;
-      padding: 95px 0;
+      padding: 100px 0;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 40px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 50px;
       align-items: center;
     }
 
     .etiqueta {
       display: inline-block;
-      border: 1px solid #ffffff70;
+      padding: 8px 15px;
+      border: 1px solid #ffffff60;
       border-radius: 30px;
-      padding: 7px 15px;
-      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 23px;
+      background: #ffffff10;
     }
 
     h1 {
-      font-size: clamp(40px, 5vw, 70px);
-      line-height: 1.05;
-      margin: 0 0 22px;
+      font-size: clamp(42px, 5.5vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -.04em;
+      margin: 0 0 25px;
     }
 
     .hero p {
+      color: #e4f0e7;
       font-size: 19px;
-      color: #e7f2e9;
+      max-width: 670px;
     }
 
     .botones {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .boton {
       display: inline-block;
-      padding: 14px 22px;
+      padding: 14px 23px;
       border-radius: 12px;
-      font-weight: bold;
+      font-weight: 800;
       text-align: center;
+      transition: transform .2s;
     }
+
+    a.boton:hover { transform: translateY(-2px); }
 
     .principal {
       background: var(--dorado);
-      color: #1c2b20;
+      color: #26301d;
     }
 
     .secundario {
@@ -121,209 +144,279 @@
     .meta {
       background: white;
       color: var(--texto);
-      padding: 30px;
-      border-radius: 22px;
-      box-shadow: 0 15px 35px #0002;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--sombra);
     }
 
     .meta small {
       text-transform: uppercase;
       color: var(--gris);
-      font-weight: bold;
+      font-weight: 800;
+      letter-spacing: .08em;
     }
 
     .cantidad {
-      color: var(--verde);
-      font-size: 43px;
+      font-size: clamp(36px, 4vw, 52px);
       font-weight: 900;
-      margin: 12px 0;
+      color: var(--verde);
+      line-height: 1.2;
+      margin: 14px 0;
     }
 
-    .progreso {
-      background: #e6ece7;
-      height: 12px;
-      border-radius: 20px;
-      margin-top: 22px;
-      overflow: hidden;
+    .meta p { color: var(--gris); }
+
+    .estado {
+      background: #eef5ee;
+      color: var(--verde);
+      padding: 12px 15px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 20px;
     }
 
-    .progreso span {
-      display: block;
-      width: 0%;
-      height: 100%;
-      background: var(--verde2);
-    }
+    .seccion { padding: 85px 0; }
 
-    .nota {
-      font-size: 13px;
-      color: var(--gris);
-    }
+    .fondo { background: var(--fondo); }
 
-    section.contenido {
-      padding: 75px 0;
-    }
-
-    .fondo {
-      background: var(--claro);
-    }
-
-    h2 {
-      font-size: clamp(29px, 4vw, 44px);
+    .titulo {
+      font-size: clamp(30px, 3.8vw, 46px);
       line-height: 1.15;
-      margin: 0 0 20px;
+      letter-spacing: -.025em;
+      margin: 0 0 18px;
     }
 
     .descripcion {
       color: var(--gris);
       font-size: 18px;
-      max-width: 850px;
+      max-width: 830px;
     }
 
-    .video {
-      margin-top: 30px;
-      background: #101812;
-      border-radius: 20px;
+    .subtitulo {
+      color: var(--verde2);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .video-contenedor {
+      margin-top: 35px;
+      border-radius: 23px;
       overflow: hidden;
-      box-shadow: 0 15px 35px #0002;
+      background: #0b140e;
+      box-shadow: var(--sombra);
     }
 
     video {
       display: block;
       width: 100%;
       aspect-ratio: 16/9;
-      background: #000;
+      background: black;
     }
 
-    .pasos, .anios, .fondos {
+    .grid {
       display: grid;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 18px;
+      margin-top: 35px;
     }
 
-    .pasos {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .anios {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .fondos {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .cinco { grid-template-columns: repeat(5, 1fr); }
+    .cuatro { grid-template-columns: repeat(4, 1fr); }
+    .tres { grid-template-columns: repeat(3, 1fr); }
 
     .tarjeta {
-      background: #fff;
-      border: 1px solid #dce5df;
-      border-radius: 18px;
-      padding: 23px;
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 19px;
+      box-shadow: 0 4px 15px #183d2510;
     }
 
-    .pasos .tarjeta {
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .tarjeta strong {
-      display: block;
-      font-size: 25px;
+    .tarjeta h3 {
       color: var(--verde);
-      margin-bottom: 8px;
+      margin: 0 0 10px;
+      font-size: 21px;
     }
 
-    .donacion {
-      background: linear-gradient(135deg, #184d32, #0e3221);
-      color: white;
-      padding: 45px;
-      border-radius: 25px;
+    .tarjeta p {
+      color: var(--gris);
+      margin: 0;
+    }
+
+    .numero {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: #e5f2e8;
+      color: var(--verde);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .anio {
+      display: block;
+      font-size: 31px;
+      font-weight: 900;
+      color: var(--verde);
+      margin-bottom: 12px;
+    }
+
+    .monto {
+      display: block;
+      font-size: 27px;
+      font-weight: 900;
+      color: var(--verde);
+      margin-bottom: 12px;
+    }
+
+    .aviso {
+      background: #fff8e9;
+      border-left: 4px solid var(--dorado);
+      padding: 18px 22px;
+      border-radius: 10px;
+      color: #62502d;
+      margin-top: 25px;
+    }
+
+    .impacto {
       display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 25px;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
       align-items: center;
     }
 
-    .donacion p { color: #e4eee7; }
+    .impacto-visual {
+      background: linear-gradient(135deg, #dcecdf, #eff6eb);
+      padding: 35px;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .impacto-visual .simbolo {
+      font-size: 70px;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .donacion {
+      background: linear-gradient(135deg, #174b31, #0b2d1e);
+      color: white;
+      padding: 55px;
+      border-radius: 27px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .donacion p { color: #e0eee5; }
+
+    .inactivo {
+      display: block;
+      background: #e6ece8;
+      color: #56675c;
+      cursor: not-allowed;
+    }
 
     .pendiente {
-      background: #f7faf7;
-      border: 2px dashed #cbd9cf;
-      border-radius: 16px;
-      padding: 25px;
       margin-top: 25px;
+      background: #f8faf7;
+      border: 2px dashed var(--borde);
+      border-radius: 18px;
+      padding: 28px;
       text-align: center;
       color: var(--gris);
     }
 
-    .boton-inactivo {
-      background: #e8ede9;
-      color: #536158;
-      cursor: not-allowed;
-    }
-
     footer {
+      background: var(--verdeoscuro);
+      color: #dcebe0;
+      padding: 45px 0;
       text-align: center;
-      padding: 35px 20px;
-      background: #102b1d;
-      color: #e3eee6;
     }
 
-    @media(max-width: 850px) {
-      .hero-grid, .donacion {
+    footer strong {
+      display: block;
+      color: white;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .impacto, .donacion {
         grid-template-columns: 1fr;
       }
 
-      .pasos, .anios, .fondos {
+      .cinco, .cuatro, .tres {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .hero { padding: 75px 0; }
     }
 
-    @media(max-width: 550px) {
-      .pasos, .anios, .fondos {
+    @media (max-width: 560px) {
+      .cinco, .cuatro, .tres {
         grid-template-columns: 1fr;
       }
 
-      .hero { padding: 65px 0; }
-      .donacion { padding: 28px; }
-      section.contenido { padding: 55px 0; }
+      .seccion { padding: 58px 0; }
+      .donacion { padding: 30px; }
+      .meta { padding: 25px; }
+      .hero { padding: 60px 0; }
+      .botones { flex-direction: column; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="barra">
+  <!-- NAVEGACION -->
+  <nav class="navegacion" aria-label="Navegación principal">
     <div class="contenedor">
-      <a class="marca" href="index.html">
+      <a href="index.html" class="marca">
         Fundación El Umbral del Oasis
       </a>
-      <a class="regresar" href="index.html">
-        ← Volver al inicio
+
+      <a href="index.html" class="volver">
+        ← Volver a la Fundación
       </a>
     </div>
   </nav>
 
+  <!-- PRESENTACION -->
   <header class="hero">
     <div class="contenedor hero-grid">
       <div>
         <span class="etiqueta">
-          Banco Comunitario de Tierra Fértil · El Salvador
+          Campaña comunitaria · Palo Negro, El Salvador
         </span>
 
-        <h1>De residuos a tierra fértil.</h1>
+        <h1>
+          De residuos a tierra fértil.
+        </h1>
 
         <p>
-          Queremos comenzar en Palo Negro y convertir esta
-          experiencia en una red nacional de comunidades
-          que transformen residuos orgánicos en un recurso
-          para recuperar y mejorar sus suelos.
+          Queremos transformar residuos orgánicos
+          en oportunidades para las comunidades.
+          Nuestro punto de partida es Palo Negro,
+          Santa Ana Este, con la visión de crear
+          una red de Bancos Comunitarios de Tierra
+          Fértil en El Salvador.
         </p>
 
         <div class="botones">
-          <a class="boton principal" href="#apoyar">
+          <a href="#apoyar" class="boton principal">
             Conoce cómo apoyar
           </a>
-          <a class="boton secundario" href="#video">
-            Ver nuestro video
+
+          <a href="#video" class="boton secundario">
+            Ver el video
           </a>
         </div>
       </div>
@@ -334,17 +427,20 @@
         <div class="cantidad">US$100,000</div>
 
         <p>
-          Capital de lanzamiento para construir el centro
-          piloto, validar el modelo y preparar su expansión.
+          Capital previsto para desarrollar el centro
+          piloto, fortalecer la operación comunitaria,
+          validar resultados y preparar la expansión
+          gradual del programa.
         </p>
 
-        <div class="progreso">
-          <span></span>
+        <div class="estado">
+          Campaña de recaudación en preparación
         </div>
 
-        <p class="nota">
-          La campaña aún no está vinculada a GoFundMe.
+        <p style="font-size:13px">
           Meta y presupuesto sujetos a validación.
+          No se muestra recaudación hasta disponer
+          de datos reales.
         </p>
       </aside>
     </div>
@@ -352,159 +448,293 @@
 
   <main>
 
-    <section class="contenido" id="video">
+    <!-- VIDEO -->
+    <section class="seccion" id="video">
       <div class="contenedor">
-        <h2>Conoce nuestra iniciativa</h2>
+        <div class="subtitulo">Nuestra historia</div>
+        <h2 class="titulo">Conoce la iniciativa</h2>
 
         <p class="descripcion">
-          Este video presenta el trabajo realizado y nuestra
-          visión de transformar residuos orgánicos en un
-          recurso útil para las comunidades de El Salvador.
+          Descubre la propuesta del Banco Comunitario
+          de Tierra Fértil y nuestra visión de
+          aprovechar los residuos orgánicos para
+          contribuir a la recuperación de los suelos.
         </p>
 
-        <div class="video">
-          <video controls playsinline preload="metadata">
+        <div class="video-contenedor">
+          <video controls playsinline preload="metadata"
+                 aria-label="Video de la campaña Tierra Fértil">
             <source
-              src="assets/video_campana_tierra_fertil_ligero.mp4"
+              src="assets/videos/video_campana_tierra_fertil_ligero.mp4"
               type="video/mp4">
-            Tu navegador no soporta este video.
+            Tu navegador no soporta video HTML5.
           </video>
         </div>
       </div>
     </section>
 
-    <section class="contenido fondo">
+    <!-- MODELO -->
+    <section class="seccion fondo" id="modelo">
       <div class="contenedor">
-        <h2>Una idea sencilla con potencial de crecer</h2>
+        <div class="subtitulo">Cómo funciona</div>
+        <h2 class="titulo">
+          Una solución comunitaria que puede crecer
+        </h2>
 
         <p class="descripcion">
-          Restos vegetales, hojas y otros materiales
+          Los residuos vegetales y otros materiales
           orgánicos pueden aprovecharse mediante
-          compostaje en lugar de terminar como desechos.
-          Proponemos un sistema comunitario que recolecte,
-          transforme y devuelva ese recurso a la tierra.
+          procesos de compostaje. Nuestra propuesta
+          consiste en organizar su recolección,
+          transformación y utilización para mejorar
+          las condiciones del suelo.
         </p>
 
-        <div class="pasos">
-          <div class="tarjeta">1. Residuos orgánicos</div>
-          <div class="tarjeta">2. Recolección</div>
-          <div class="tarjeta">3. Compostaje</div>
-          <div class="tarjeta">4. Tierra fértil</div>
-          <div class="tarjeta">5. Comunidad</div>
+        <div class="grid cinco">
+          <div class="tarjeta">
+            <span class="numero">01</span>
+            <h3>Residuos</h3>
+            <p>
+              Aprovechamiento de materiales
+              orgánicos disponibles.
+            </p>
+          </div>
+
+          <div class="tarjeta">
+            <span class="numero">02</span>
+            <h3>Recolección</h3>
+            <p>
+              Organización comunitaria para
+              reunir y clasificar materiales.
+            </p>
+          </div>
+
+          <div class="tarjeta">
+            <span class="numero">03</span>
+            <h3>Compostaje</h3>
+            <p>
+              Transformación controlada de
+              los residuos orgánicos.
+            </p>
+          </div>
+
+          <div class="tarjeta">
+            <span class="numero">04</span>
+            <h3>Tierra fértil</h3>
+            <p>
+              Producción de compost para
+              mejorar los suelos.
+            </p>
+          </div>
+
+          <div class="tarjeta">
+            <span class="numero">05</span>
+            <h3>Comunidad</h3>
+            <p>
+              Participación y aprendizaje
+              para sostener el programa.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="contenido">
+    <!-- EXPANSION -->
+    <section class="seccion" id="expansion">
       <div class="contenedor">
-        <h2>De Palo Negro a una red nacional</h2>
+        <div class="subtitulo">Visión a futuro</div>
+        <h2 class="titulo">
+          De Palo Negro a una red nacional
+        </h2>
 
         <p class="descripcion">
-          Nuestra visión contempla cuatro años de
-          crecimiento progresivo, comenzando con
-          un centro piloto y avanzando hacia nuevas
-          comunidades conforme se validen los resultados.
+          La expansión se plantea como un proceso
+          progresivo. Primero buscamos demostrar
+          que el modelo funciona, documentar los
+          resultados y posteriormente adaptarlo
+          a otras comunidades.
         </p>
 
-        <div class="anios">
+        <div class="grid cuatro">
           <div class="tarjeta">
-            <strong>2027</strong>
-            Construir y validar el centro piloto
-            en Palo Negro.
+            <span class="anio">2027</span>
+            <h3>Centro piloto</h3>
+            <p>
+              Construir y validar el primer
+              centro comunitario en Palo Negro.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>2028</strong>
-            Replicar el modelo en nuevas
-            comunidades de la región.
+            <span class="anio">2028</span>
+            <h3>Réplica regional</h3>
+            <p>
+              Extender el modelo hacia nuevas
+              comunidades de la región.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>2029</strong>
-            Extender la red hacia nuevas
-            zonas del país.
+            <span class="anio">2029</span>
+            <h3>Expansión</h3>
+            <p>
+              Preparar su implementación en
+              nuevas zonas de El Salvador.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>2030</strong>
-            Aspirar a una presencia del
-            programa a escala nacional.
+            <span class="anio">2030</span>
+            <h3>Visión nacional</h3>
+            <p>
+              Aspirar a una red comunitaria
+              con presencia nacional.
+            </p>
           </div>
+        </div>
+
+        <div class="aviso">
+          Este calendario representa una visión
+          de crecimiento, sujeta a financiamiento,
+          resultados técnicos y participación comunitaria.
         </div>
       </div>
     </section>
 
-    <section class="contenido fondo">
+    <!-- PRESUPUESTO -->
+    <section class="seccion fondo" id="presupuesto">
       <div class="contenedor">
-        <h2>¿Qué financiará la primera meta?</h2>
+        <div class="subtitulo">Transparencia</div>
+        <h2 class="titulo">
+          ¿Cómo se utilizarían los US$100,000?
+        </h2>
 
         <p class="descripcion">
-          Los US$100,000 representan una propuesta de
-          capital inicial y no el costo total de la
-          expansión nacional. El presupuesto está
-          sujeto a revisión y validación.
+          La primera meta está concebida como
+          capital de lanzamiento, no como el costo
+          total de la expansión nacional.
+          Esta distribución es preliminar y deberá
+          validarse antes de iniciar la recaudación.
         </p>
 
-        <div class="fondos">
+        <div class="grid tres">
           <div class="tarjeta">
-            <strong>US$22,000</strong>
-            Infraestructura del centro piloto.
+            <span class="monto">US$22,000</span>
+            <h3>Infraestructura</h3>
+            <p>
+              Construcción y adecuación
+              del centro piloto.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>US$13,000</strong>
-            Sistemas de compostaje.
+            <span class="monto">US$13,000</span>
+            <h3>Compostaje</h3>
+            <p>
+              Sistemas y equipos para
+              procesar materia orgánica.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>US$12,000</strong>
-            Recolección y logística.
+            <span class="monto">US$12,000</span>
+            <h3>Logística</h3>
+            <p>
+              Recolección y transporte
+              de materiales.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>US$11,000</strong>
-            Herramientas, agua y control del proceso.
+            <span class="monto">US$11,000</span>
+            <h3>Herramientas y agua</h3>
+            <p>
+              Equipos, herramientas y
+              control del proceso.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>US$15,000</strong>
-            Capacitación, medición y modelo de réplica.
+            <span class="monto">US$15,000</span>
+            <h3>Capacitación</h3>
+            <p>
+              Formación comunitaria,
+              medición y modelo de réplica.
+            </p>
           </div>
 
           <div class="tarjeta">
-            <strong>US$27,000</strong>
-            Almacenamiento, expansión inicial,
-            comunicación, operación y contingencias.
+            <span class="monto">US$27,000</span>
+            <h3>Operación y expansión</h3>
+            <p>
+              Almacenamiento, comunicación,
+              expansión inicial y contingencias.
+            </p>
           </div>
+        </div>
+
+        <div class="aviso">
+          Presupuesto estimado. Los montos no
+          representan gastos ejecutados ni fondos
+          recaudados.
         </div>
       </div>
     </section>
 
-    <section class="contenido">
-      <div class="contenedor">
-        <h2>Un proyecto con raíces comunitarias</h2>
+    <!-- IMPACTO -->
+    <section class="seccion">
+      <div class="contenedor impacto">
+        <div>
+          <div class="subtitulo">Nuestro compromiso</div>
+          <h2 class="titulo">
+            Un proyecto con raíces comunitarias
+          </h2>
 
-        <p class="descripcion">
-          Palo Negro, en Santa Ana Este, es el punto
-          de partida de esta iniciativa. Queremos
-          documentar el trabajo de campo, los procesos
-          de compostaje y los resultados para compartir
-          los avances con la comunidad y los donantes.
-        </p>
+          <p class="descripcion">
+            Palo Negro es el punto de partida
+            de una iniciativa que busca mejorar
+            el aprovechamiento de los residuos
+            orgánicos y fortalecer la participación
+            de las comunidades.
+          </p>
 
-        <div class="pendiente">
-          Próximamente: galería de fotografías
-          reales y autorizadas del proyecto.
+          <p class="descripcion">
+            Queremos documentar las actividades,
+            publicar avances y compartir los
+            resultados obtenidos para que quienes
+            colaboren conozcan cómo evoluciona
+            el proyecto.
+          </p>
+
+          <a href="tierra-fertil.html"
+             class="boton principal">
+            Conocer el proyecto Tierra Fértil
+          </a>
+        </div>
+
+        <div class="impacto-visual">
+          <span class="simbolo" aria-hidden="true">🌱</span>
+          <h3>Transformar residuos en oportunidades</h3>
+          <p>
+            Suelos más saludables, educación
+            ambiental y participación comunitaria.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="contenido" id="apoyar">
+    <!-- DONACIONES -->
+    <section class="seccion" id="apoyar">
       <div class="contenedor">
-
         <div class="donacion">
           <div>
-            <h2>Ayúdanos a hacer crecer esta iniciativa</h2>
+            <div class="subtitulo" style="color:#f0c56d">
+              Súmate a nuestra visión
+            </div>
+
+            <h2 class="titulo">
+              Ayúdanos a hacer crecer esta iniciativa
+            </h2>
 
             <p>
               Una comunidad será nuestro comienzo.
@@ -513,14 +743,14 @@
             </p>
 
             <p>
-              Estamos preparando nuestra campaña
+              Estamos preparando la campaña oficial
               de recaudación de fondos.
             </p>
           </div>
 
           <div>
-            <!-- Sustituir por enlace real al publicarse -->
-            <span class="boton boton-inactivo">
+            <!-- Activar cuando exista URL real -->
+            <span class="boton inactivo">
               GoFundMe: próximamente
             </span>
           </div>
@@ -529,24 +759,26 @@
         <div class="pendiente">
           <strong>Campaña en preparación</strong>
           <p>
-            Aquí se colocará el enlace oficial
-            de GoFundMe cuando esté publicado.
-            También podrá incorporarse su widget
-            oficial, si está disponible.
+            Próximamente se publicará aquí
+            el enlace oficial para contribuir.
+            No se están procesando donaciones
+            desde esta página.
           </p>
         </div>
-
       </div>
     </section>
 
   </main>
 
   <footer>
-    Fundación El Umbral del Oasis
-    <p>
+    <div class="contenedor">
+      <strong>Fundación El Umbral del Oasis</strong>
       Banco Comunitario de Tierra Fértil
-      · Palo Negro, Santa Ana Este, El Salvador
-    </p>
+      <p>Palo Negro · Santa Ana Este · El Salvador</p>
+      <a href="index.html" style="color:#f0c56d">
+        Regresar a la página principal
+      </a>
+    </div>
   </footer>
 
 </body>
