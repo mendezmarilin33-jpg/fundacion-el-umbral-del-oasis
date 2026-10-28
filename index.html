@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fundación El Umbral del Oasis en El Salvador. Conoce nuestros proyectos comunitarios de compostaje, recuperación de suelos, agua y producción sostenible." />
   <title>Fundación El Umbral del Oasis | El Salvador</title>
+
+  <!-- LOGO OFICIAL EN LA PESTAÑA -->
+  <link rel="icon" type="image/png" href="assets/logo-fundacion.png" />
+  <link rel="apple-touch-icon" href="assets/logo-fundacion.png" />
+
   <link rel="canonical" href="https://mendezmarilin33-jpg.github.io/fundacion-el-umbral-del-oasis/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_SV" />
@@ -13,6 +18,7 @@
   <meta property="og:title" content="Fundación El Umbral del Oasis | El Salvador" />
   <meta property="og:description" content="Proyectos comunitarios de compostaje, recuperación de suelos, agua y producción sostenible en El Salvador." />
   <meta property="og:url" content="https://mendezmarilin33-jpg.github.io/fundacion-el-umbral-del-oasis/" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,6 +35,29 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+    /* LOGO OFICIAL DE LA FUNDACIÓN */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-fundacion {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .logo-fundacion {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
     /* Nuevos estilos: campañas y donaciones */
     .campaign-section {
       background: #f2f7f0;
@@ -233,8 +262,15 @@
   <header class="site-header">
     <div class="container nav-wrap">
 
+      <!-- LOGOTIPO ORIGINAL DE LA FUNDACIÓN -->
       <a href="#inicio" class="brand">
-        <span class="brand-mark">UO</span>
+        <img
+          src="assets/logo-fundacion.png"
+          alt="Logotipo oficial de Fundación El Umbral del Oasis"
+          class="logo-fundacion"
+          width="64"
+          height="64"
+        />
         <span class="brand-text">
           <strong>Fundación El Umbral del Oasis</strong>
           <small>Agua · Suelo · Comunidad</small>
