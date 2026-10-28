@@ -7,10 +7,11 @@
   <meta name="description" content="Fundación El Umbral del Oasis en El Salvador. Conoce nuestros proyectos comunitarios de compostaje, recuperación de suelos, agua y producción sostenible." />
   <title>Fundación El Umbral del Oasis | El Salvador</title>
 
-  <!-- LOGO OFICIAL EN LA PESTAÑA -->
+  <!-- LOGO OFICIAL -->
   <link rel="icon" type="image/png" href="assets/logo-fundacion.png" />
   <link rel="apple-touch-icon" href="assets/logo-fundacion.png" />
 
+  <!-- SEO -->
   <link rel="canonical" href="https://fundacionelumbraldeloasis.org/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_SV" />
@@ -35,7 +36,11 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* LOGO OFICIAL DE LA FUNDACIÓN */
+
+    /* =====================================
+       LOGOTIPO OFICIAL
+    ===================================== */
+
     .brand {
       display: flex;
       align-items: center;
@@ -58,164 +63,304 @@
       }
     }
 
-    /* MENÚ ADAPTABLE */
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+    /* =====================================
+       NUEVA PORTADA DE DONACIONES Y REDES
+    ===================================== */
+
+    .featured-support {
+      background: #f2f7f0;
+      padding: 34px 0 55px;
     }
 
-    .brand {
-      min-width: 0;
-      flex-shrink: 0;
+    .featured-support *,
+    .featured-support *::before,
+    .featured-support *::after {
+      box-sizing: border-box;
     }
 
-    .brand-text {
-      min-width: 0;
+    .featured-support-inner {
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(8px, 1.1vw, 18px);
+    /* CUADRO PRINCIPAL GOFUNDME */
+
+    .featured-donation {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(116, 181, 119, .22),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          #205e40 0%,
+          #174d34 55%,
+          #103724 100%
+        );
+      border-radius: 26px;
+      padding: 44px 32px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 18px 42px rgba(22, 68, 42, .18);
     }
 
-    .main-nav a {
-      font-size: clamp(12px, .92vw, 15px);
-      white-space: nowrap;
-    }
-
-    @media (max-width: 1180px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .main-nav {
-        display: none;
-      }
-
-      .main-nav.active,
-      .main-nav.open,
-      .main-nav.is-open {
-        display: flex;
-      }
-    }
-
-    /* REDES SOCIALES */
-    .social-section {
-      padding: 82px 0;
-      background: #f4f8f2;
-    }
-
-    .social-panel {
-      background: #fff;
-      border: 1px solid #dce9de;
-      border-radius: 24px;
-      padding: clamp(24px, 4vw, 50px);
-      box-shadow: 0 16px 40px rgba(18,65,39,.08);
-    }
-
-    .social-panel h2 {
-      margin: 10px 0 12px;
-      color: #183e2b;
-    }
-
-    .social-panel > p {
-      color: #53685a;
-      max-width: 760px;
-      line-height: 1.7;
-    }
-
-    .social-links {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin: 30px 0;
-    }
-
-    .social-link {
+    .featured-donation-icon {
+      width: 70px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      border: 1px solid #dce9de;
-      border-radius: 14px;
-      padding: 17px 12px;
-      color: #194d34;
-      background: #f8fbf8;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform .2s, background .2s;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .10);
+      color: #f2d184;
     }
 
-    .social-link:hover,
-    .social-link:focus-visible {
-      transform: translateY(-3px);
-      background: #eaf3ec;
+    .featured-donation-icon svg {
+      width: 38px;
+      height: 38px;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
     }
 
-    .social-link svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    .social-donate {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 26px;
-      border-radius: 18px;
-      background: #194d34;
-      color: white;
-    }
-
-    .social-donate h3 {
-      margin: 0 0 6px;
-      color: #fff;
-    }
-
-    .social-donate p {
-      margin: 0;
-      color: #e5efe7;
-    }
-
-    .social-donate a {
+    .featured-donation-label {
       display: inline-block;
-      padding: 15px 22px;
-      border-radius: 12px;
-      background: #f0c86d;
-      color: #193c2a;
+      color: #f2d184;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .featured-donation h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.2;
+      color: #ffffff;
+      max-width: 790px;
+      margin: 0 auto 18px;
+    }
+
+    .featured-donation p {
+      color: #e1ede5;
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 690px;
+      margin: 0 auto 26px;
+    }
+
+    .featured-donation-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      background: #f2d184;
+      color: #17432e;
+      padding: 17px 30px;
+      border-radius: 13px;
+      font-size: 16px;
       font-weight: 800;
       text-decoration: none;
+      box-shadow: 0 7px 22px rgba(0, 0, 0, .13);
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
-    .social-donate a:hover {
-      background: #ffe0a0;
+    .featured-donation-button:hover,
+    .featured-donation-button:focus-visible {
+      background: #ffe2a0;
+      color: #17432e;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .18);
     }
 
-    @media (max-width: 780px) {
-      .social-links {
+    .featured-donation-button svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* TÍTULO DE REDES SOCIALES */
+
+    .featured-social-heading {
+      text-align: center;
+      margin: 35px 0 23px;
+    }
+
+    .featured-social-heading h2 {
+      color: #174d34;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.3;
+      margin: 0 0 10px;
+    }
+
+    .featured-social-heading p {
+      color: #64766a;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* CUATRO CUADROS DE COLORES */
+
+    .featured-social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .featured-social-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 165px;
+      padding: 25px 15px;
+      border-radius: 20px;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .11);
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+    }
+
+    .featured-social-card:hover,
+    .featured-social-card:focus-visible {
+      transform: translateY(-7px);
+      box-shadow: 0 17px 32px rgba(0, 0, 0, .18);
+      filter: brightness(1.07);
+      color: #ffffff;
+    }
+
+    .featured-social-card svg {
+      width: 51px;
+      height: 51px;
+      fill: currentColor;
+      margin-bottom: 13px;
+    }
+
+    .featured-social-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .featured-social-card small {
+      display: block;
+      color: rgba(255, 255, 255, .86);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* COLORES OFICIALES / REPRESENTATIVOS */
+
+    .featured-facebook {
+      background: #1877f2;
+    }
+
+    .featured-instagram {
+      background: linear-gradient(
+        135deg,
+        #833ab4 0%,
+        #c13584 35%,
+        #e1306c 65%,
+        #f77737 100%
+      );
+    }
+
+    .featured-tiktok {
+      background: #161616;
+    }
+
+    .featured-tiktok svg {
+      color: #55e6e9;
+      filter: drop-shadow(3px 2px 0 #ee1d52);
+    }
+
+    .featured-youtube {
+      background: #e62117;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 800px) {
+      .featured-social-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .featured-social-card {
+        min-height: 155px;
+      }
     }
 
-    @media (max-width: 480px) {
-      .social-links {
-        grid-template-columns: 1fr;
+    @media (max-width: 520px) {
+      .featured-support {
+        padding: 20px 0 40px;
       }
 
-      .social-donate a {
+      .featured-donation {
+        padding: 32px 20px;
+        border-radius: 20px;
+      }
+
+      .featured-donation h2 {
+        font-size: 29px;
+      }
+
+      .featured-donation p {
+        font-size: 14px;
+      }
+
+      .featured-donation-button {
         width: 100%;
-        text-align: center;
+        padding: 16px 14px;
+      }
+
+      .featured-social-grid {
+        gap: 11px;
+      }
+
+      .featured-social-card {
+        min-height: 140px;
+        padding: 19px 10px;
+        border-radius: 15px;
+      }
+
+      .featured-social-card svg {
+        width: 42px;
+        height: 42px;
+      }
+
+      .featured-social-card strong {
+        font-size: 16px;
+      }
+
+      .featured-social-card small {
+        font-size: 11px;
       }
     }
 
-    /* CAMPAÑAS Y DONACIONES */
+    /* =====================================
+       CAMPAÑAS Y DONACIONES ORIGINALES
+    ===================================== */
+
     .campaign-section {
       background: #f2f7f0;
       padding: 90px 0;
@@ -410,16 +555,19 @@
         padding: 30px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- =====================================
+       ENCABEZADO ORIGINAL
+  ===================================== -->
+
   <header class="site-header">
     <div class="container nav-wrap">
 
-      <!-- LOGOTIPO ORIGINAL DE LA FUNDACIÓN -->
       <a href="#inicio" class="brand">
         <img
           src="assets/logo-fundacion.png"
@@ -456,7 +604,144 @@
 
   <main>
 
-    <!-- INICIO -->
+    <!-- =====================================
+         NUEVA SECCIÓN PRINCIPAL
+         GOFUNDME ARRIBA Y REDES ABAJO
+    ===================================== -->
+
+    <section class="featured-support" id="apoyanos">
+      <div class="container">
+        <div class="featured-support-inner">
+
+          <!-- CUADRO PRINCIPAL DE GOFUNDME -->
+
+          <div class="featured-donation">
+
+            <div class="featured-donation-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+              </svg>
+            </div>
+
+            <span class="featured-donation-label">
+              Campaña oficial · GoFundMe
+            </span>
+
+            <h2>
+              Banco Comunitario de Tierra Fértil
+            </h2>
+
+            <p>
+              Ayúdanos a transformar residuos orgánicos
+              en oportunidades para nuestras comunidades.
+              Con tu apoyo podemos impulsar iniciativas
+              ambientales y contribuir a la recuperación
+              de nuestros suelos en El Salvador.
+            </p>
+
+            <a
+              href="https://gofund.me/1484a24b3"
+              class="featured-donation-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+              </svg>
+              Donar en GoFundMe
+            </a>
+
+          </div>
+
+          <!-- TÍTULO DE REDES SOCIALES -->
+
+          <div class="featured-social-heading">
+            <h2>
+              Síguenos en nuestras redes sociales
+            </h2>
+            <p>
+              Conoce nuestros avances y comparte nuestra misión.
+            </p>
+          </div>
+
+          <!-- CUADROS GRANDES DE REDES -->
+
+          <div class="featured-social-grid">
+
+            <!-- FACEBOOK -->
+
+            <a
+              href="https://www.facebook.com/profile.php?id=61595665334101"
+              class="featured-social-card featured-facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Facebook de Fundación El Umbral del Oasis"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/>
+              </svg>
+              <strong>Facebook</strong>
+              <small>Síguenos</small>
+            </a>
+
+            <!-- INSTAGRAM -->
+
+            <a
+              href="https://www.instagram.com/fundacionelumbraldeloasis/"
+              class="featured-social-card featured-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Instagram de Fundación El Umbral del Oasis"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-2.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
+              </svg>
+              <strong>Instagram</strong>
+              <small>Síguenos</small>
+            </a>
+
+            <!-- TIKTOK -->
+
+            <a
+              href="https://www.tiktok.com/@fundacion.umbral.oasis"
+              class="featured-social-card featured-tiktok"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar TikTok de Fundación El Umbral del Oasis"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.7 2h-3.1v13.2a3.2 3.2 0 1 1-3.2-3.2c.3 0 .6 0 .9.1V8.9a6.5 6.5 0 1 0 5.4 6.3V8.5a8 8 0 0 0 4.7 1.5V6.9a4.8 4.8 0 0 1-4.7-4.9Z"/>
+              </svg>
+              <strong>TikTok</strong>
+              <small>Síguenos</small>
+            </a>
+
+            <!-- YOUTUBE -->
+
+            <a
+              href="https://www.youtube.com/channel/UCDOfABm7Kd8qr9r17k-e39w"
+              class="featured-social-card featured-youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar YouTube de Fundación El Umbral del Oasis"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.9 12 4.9 12 4.9s-6 0-7.7.4a2.7 2.7 0 0 0-1.9 1.9C2 8.9 2 12 2 12s0 3.1.4 4.8a2.7 2.7 0 0 0 1.9 1.9c1.7.4 7.7.4 7.7.4s6 0 7.7-.4a2.7 2.7 0 0 0 1.9-1.9C22 15.1 22 12 22 12s0-3.1-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
+              </svg>
+              <strong>YouTube</strong>
+              <small>Suscríbete</small>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         INICIO ORIGINAL
+    ===================================== -->
+
     <section class="hero" id="inicio">
       <div class="hero-overlay"></div>
 
@@ -489,7 +774,10 @@
       </div>
     </section>
 
-    <!-- NOSOTROS -->
+    <!-- =====================================
+         NOSOTROS
+    ===================================== -->
+
     <section class="section intro" id="nosotros">
       <div class="container grid-2">
 
@@ -518,7 +806,10 @@
       </div>
     </section>
 
-    <!-- NUESTRO TRABAJO -->
+    <!-- =====================================
+         NUESTRO TRABAJO
+    ===================================== -->
+
     <section class="section muted" id="trabajo">
       <div class="container">
 
@@ -571,7 +862,10 @@
       </div>
     </section>
 
-    <!-- PROYECTO TIERRA FÉRTIL -->
+    <!-- =====================================
+         PROYECTO TIERRA FÉRTIL
+    ===================================== -->
+
     <section class="section project" id="tierra-fertil">
       <div class="container grid-2 project-grid">
 
@@ -628,7 +922,10 @@
       </div>
     </section>
 
-    <!-- AGUA Y PISCICULTURA -->
+    <!-- =====================================
+         AGUA Y PISCICULTURA
+    ===================================== -->
+
     <section class="section water-section" id="agua">
       <div class="container">
 
@@ -693,7 +990,10 @@
       </div>
     </section>
 
-    <!-- CAMPAÑAS Y DONACIONES -->
+    <!-- =====================================
+         CAMPAÑAS Y DONACIONES
+    ===================================== -->
+
     <section class="campaign-section" id="campanas">
       <div class="container">
 
@@ -739,11 +1039,12 @@
             </p>
 
             <div class="campaign-goal">
-              <small>Meta propuesta para el proyecto</small>
+              <small>Meta inicial propuesta para el proyecto</small>
               <strong>US$100,000</strong>
               <span>
-                Puedes contribuir desde la campaña
-                oficial de GoFundMe.
+                Capital de lanzamiento sujeto a validación.
+                Consulta la meta de recaudación vigente
+                directamente en GoFundMe.
               </span>
             </div>
 
@@ -753,8 +1054,13 @@
                 Conocer la campaña →
               </a>
 
+              <a href="campana-tierra-fertil.html#video"
+                 class="campaign-button campaign-secondary">
+                Ver el video
+              </a>
+
               <a href="https://gofund.me/1484a24b3"
-                 class="campaign-button campaign-secondary"
+                 class="campaign-button"
                  target="_blank"
                  rel="noopener noreferrer">
                 Donar en GoFundMe ↗
@@ -782,15 +1088,18 @@
         </article>
 
         <p class="campaign-footnote">
-          Las donaciones se realizan a través del enlace
-          oficial de GoFundMe. Consulta los detalles y
-          condiciones directamente en la plataforma.
+          Puedes apoyar nuestra iniciativa desde el enlace
+          oficial de GoFundMe. Las donaciones se gestionan
+          a través de esa plataforma.
         </p>
 
       </div>
     </section>
 
-    <!-- TRANSPARENCIA -->
+    <!-- =====================================
+         TRANSPARENCIA
+    ===================================== -->
+
     <section class="section" id="transparencia">
       <div class="container grid-2">
 
@@ -821,7 +1130,10 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- =====================================
+         CONTACTO
+    ===================================== -->
+
     <section class="section cta" id="contacto">
       <div class="container cta-box">
 
@@ -855,104 +1167,12 @@
       </div>
     </section>
 
-    <!-- REDES SOCIALES Y DONACIONES -->
-    <section class="social-section" id="redes-sociales">
-      <div class="container">
-        <div class="social-panel">
-
-          <span class="section-kicker">
-            Conecta con nosotros
-          </span>
-
-          <h2>
-            Sigamos construyendo juntos un futuro sostenible.
-          </h2>
-
-          <p>
-            Conoce nuestras actividades, comparte los avances
-            de los proyectos y ayúdanos a llegar a más
-            comunidades. Síguenos en nuestras redes sociales
-            oficiales.
-          </p>
-
-          <div class="social-links">
-
-            <!-- FACEBOOK -->
-            <a class="social-link"
-               href="https://www.facebook.com/profile.php?id=61595665334101"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visitar Facebook de la fundación">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/>
-              </svg>
-              Facebook
-            </a>
-
-            <!-- INSTAGRAM -->
-            <a class="social-link"
-               href="https://www.instagram.com/fundacionelumbraldeloasis/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visitar Instagram de la fundación">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-2.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-              </svg>
-              Instagram
-            </a>
-
-            <!-- TIKTOK -->
-            <a class="social-link"
-               href="https://www.tiktok.com/@fundacion.umbral.oasis"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visitar TikTok de la fundación">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M16.7 2h-3.1v13.2a3.2 3.2 0 1 1-3.2-3.2c.3 0 .6 0 .9.1V8.9a6.5 6.5 0 1 0 5.4 6.3V8.5a8 8 0 0 0 4.7 1.5V6.9a4.8 4.8 0 0 1-4.7-4.9Z"/>
-              </svg>
-              TikTok
-            </a>
-
-            <!-- YOUTUBE -->
-            <a class="social-link"
-               href="https://www.youtube.com/channel/UCDOfABm7Kd8qr9r17k-e39w"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visitar YouTube de la fundación">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.9 12 4.9 12 4.9s-6 0-7.7.4a2.7 2.7 0 0 0-1.9 1.9C2 8.9 2 12 2 12s0 3.1.4 4.8a2.7 2.7 0 0 0 1.9 1.9c1.7.4 7.7.4 7.7.4s6 0 7.7-.4a2.7 2.7 0 0 0 1.9-1.9C22 15.1 22 12 22 12s0-3.1-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
-              </svg>
-              YouTube
-            </a>
-
-          </div>
-
-          <!-- APOYO POR GOFUNDME -->
-          <div class="social-donate">
-            <div>
-              <h3>
-                Apoya el Banco Comunitario de Tierra Fértil
-              </h3>
-              <p>
-                Tu contribución puede impulsar acciones
-                ambientales y comunitarias en El Salvador.
-              </p>
-            </div>
-
-            <a href="https://gofund.me/1484a24b3"
-               target="_blank"
-               rel="noopener noreferrer">
-              Donar en GoFundMe ↗
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- =====================================
+       PIE DE PÁGINA
+  ===================================== -->
+
   <footer class="footer">
     <div class="container footer-grid">
 
@@ -965,7 +1185,7 @@
         <a href="#nosotros">Nosotros</a>
         <a href="#trabajo">Proyectos</a>
         <a href="#campanas">Campañas</a>
-        <a href="#redes-sociales">Redes sociales</a>
+        <a href="#apoyanos">Donaciones y redes</a>
         <a href="#transparencia">Transparencia</a>
         <a href="#contacto">Contacto</a>
       </div>
